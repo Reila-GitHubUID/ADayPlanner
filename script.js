@@ -34,19 +34,17 @@ $(document).ready(function () {
         let $description = $("<textarea>").attr("class", "description");
         $newRow.append($description);
 
-        $newRow.append($("<button>").attr("class", "saveBtn"));
-
+        $newRow.append($("<button>").attr("class", "saveBtn").text("💾"));
 
 
         if (moment()) {
             $description.attr("class", "past");
-        } else if (moment()) {
+        } else if (moment().toDate()) {
             $description.attr("class", "present");
         } else {
             $description.attr("class", "future");
         }
 
-        console.log("workhours[" + i + "] is " + workHours[i]);
         // create and append a textarea row into a container
         $container.append($newRow);
     }

@@ -9,3 +9,6 @@
     // displaying today's Day, Month Date, Year in the header
     let currentDate = new Date().toDateString();
     $("#currentDay").text(currentDate);
+
+    // contents inside the <div class="container">
+    

@@ -25,27 +25,31 @@ $(document).ready(function () {
     // contents inside the <div class="container">
     for (let i = 0; i < workHours.length; i++) {
         // create and append a time-block, description and saveBtn in a textarea row along with their classes
-        let $newRow = $("<div>").attr("class", "row")
+        let $newRow = $("<div>").addClass("row");
         $container.append($newRow);
 
-        let $timeBlock = $("<div>").attr("class", "timeBlock").text(workHours[i]);
+        let $timeBlock = $("<div>").addClass("timeBlock").text(workHours[i]);
         $newRow.append($timeBlock);
 
-        let $description = $("<textarea>").attr("class", "description");
+        let $description = $("<textarea>").addClass("description").attr("class", "present");
         $newRow.append($description);
 
-        $newRow.append($("<button>").attr("class", "saveBtn").text("💾"));
+        $newRow.append($("<button>").addClass("saveBtn").text("💾"));
 
 
-        if (moment()) {
-            $description.attr("class", "past");
-        } else if (moment().toDate()) {
-            $description.attr("class", "present");
-        } else {
-            $description.attr("class", "future");
-        }
+        // if (moment()) {
+        //     $description.attr("class", "past");
+        // } else if (moment().toDate()) {
+        //     $description.attr("class", "present");
+        // } else {
+        //     $description.attr("class", "future");
+        // }
 
         // create and append a textarea row into a container
         $container.append($newRow);
     }
+
+    $(".saveBtn").on("click", function() {
+
+    });
 });

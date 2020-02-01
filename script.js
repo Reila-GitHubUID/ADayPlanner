@@ -40,6 +40,16 @@ $(document).ready(function () {
         $container.append($newRow);
 
         // Adding color coded timeblock to indicate the past, present, and future coloring
+        let momentTime = moment("23:30", 'HH:mm');
+        let laterMomentTime = moment("15:00", 'HH:mm');
+
+        if(momentTime.isBefore(laterMomentTime)){
+            console.log("Yes 1:30 pm is earlier");
+        }
+
+        if(momentTime.isAfter(laterMomentTime)) {
+            console.log("No, 11:30pm is later");
+        }
         // if (moment()) {
         //     $description.addClass("past");
         // } else if (moment().toDate()) {

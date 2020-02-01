@@ -1,28 +1,20 @@
-// Gathered from index.html as reference
-    // <header>
-    // <p id="currentDay" class="lead"></p>
-    // </header>
-    // <div class="container">
-    //   <!-- Timeblocks go here -->
-    // </div>
+// initialization
+let workHours = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
+let $container = $(".container");
 
-// Gathered from style.css, and will be leveraged here.
+
+$(document).ready(function () {
+    // displaying today's Day, Month Date, Year in the header using Moment.js
+    $("#currentDay").text(moment().format('dddd, MMMM Do, YYYY'));
+
+    // contents inside the <div class="container">
+    // Gathered from style.css, and will be leveraged here.
     // .container has multiple .row
     // .row has .timeBlock, .description and .saveBtn (and .saveBtn i:hover)
     // .timeBlock has .hour
     // textarea has .description
     // .description has .past, .present, and .future
-//----------------------------------------------------
-
-// initialization
-let workHours = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-let $container = $(".container");
-
-// displaying today's Day, Month Date, Year in the header using Moment.js
-$("#currentDay").text(moment().format('dddd, MMMM Do, YYYY'));
-
-$(document).ready(function () {
-    // contents inside the <div class="container">
+    //----------------------------------------------------
     for (let i = 1; i <= workHours.length; i++) {
         // create and append a time-block, description and saveBtn in a textarea row along with their classes
         let $newRow = $("<div>").addClass("row").addClass("row"+i);
@@ -55,46 +47,55 @@ $(document).ready(function () {
         if($(event.target).attr('id') === 'button1'){
             let userInput = $.trim($("#textarea1").val());
             $("#textarea1").text(userInput);
+            localStorage.setItem("button1", userInput);
             console.log("#textarea1 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button2'){
             let userInput = $.trim($("#textarea2").val());
             $("#textarea2").text(userInput);
+            localStorage.setItem("button2", userInput);
             console.log("#textarea2 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button3'){
             let userInput = $.trim($("#textarea3").val());
             $("#textarea3").text(userInput);
+            localStorage.setItem("button3", userInput);
             console.log("#textarea3 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button4'){
             let userInput = $.trim($("#textarea4").val());
             $("#textarea4").text(userInput);
+            localStorage.setItem("button4", userInput);
             console.log("#textarea4 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button5'){
             let userInput = $.trim($("#textarea5").val());
             $("#textarea5").text(userInput);
+            localStorage.setItem("button5", userInput);
             console.log("#textarea5 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button6'){
             let userInput = $.trim($("#textarea6").val());
             $("#textarea6").text(userInput);
+            localStorage.setItem("button6", userInput);
             console.log("#textarea6 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button7'){
             let userInput = $.trim($("#textarea7").val());
             $("#textarea7").text(userInput);
+            localStorage.setItem("button7", userInput);
             console.log("#textarea7 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button8'){
             let userInput = $.trim($("#textarea8").val());
             $("#textarea8").text(userInput);
+            localStorage.setItem("button8", userInput);
             console.log("#textarea8 = " + userInput);
         } 
         else if($(event.target).attr('id') ==='button9'){
             let userInput = $.trim($("#textarea9").val());
             $("#textarea9").text(userInput);
+            localStorage.setItem("button9", userInput);
             console.log("#textarea9 = " + userInput);
         } 
     });

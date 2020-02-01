@@ -1,4 +1,4 @@
-body { /**/
+body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -21,7 +21,7 @@ textarea{
   width: 500px;
 }
 
-.jumbotron { /**/
+.jumbotron {
   text-align: center;
   background-color: transparent;
   color: black;
@@ -35,7 +35,6 @@ textarea{
 
 .timeBlock{
   text-align: center;
-  /* border-radius: 15px; */
   border-top: solid #d3d3d3 2px;
   padding-top: 20px;
   width: 70px;

@@ -23,33 +23,79 @@ $("#currentDay").text(moment().format('dddd, MMMM Do, YYYY'));
 
 $(document).ready(function () {
     // contents inside the <div class="container">
-    for (let i = 0; i < workHours.length; i++) {
+    for (let i = 1; i <= workHours.length; i++) {
         // create and append a time-block, description and saveBtn in a textarea row along with their classes
-        let $newRow = $("<div>").addClass("row");
+        let $newRow = $("<div>").addClass("row").addClass("row"+i);
         $container.append($newRow);
 
-        let $timeBlock = $("<div>").addClass("timeBlock").text(workHours[i]);
+        let $timeBlock = $("<div>").addClass("timeBlock").text(workHours[i-1]);
         $newRow.append($timeBlock);
 
-        let $description = $("<textarea>").addClass("description").attr("class", "present");
+        let $description = $("<textarea>").addClass("description");
+        $description.addClass("present");
+        $description.attr("id", "textarea"+i);
         $newRow.append($description);
 
-        $newRow.append($("<button>").addClass("saveBtn").text("💾"));
+        $newRow.append($("<button>").addClass("saveBtn").text("💾").attr("id", "button"+i));
 
 
         // if (moment()) {
-        //     $description.attr("class", "past");
+        //     $description.addClass("past");
         // } else if (moment().toDate()) {
-        //     $description.attr("class", "present");
+        //     $description.addClass("present");
         // } else {
-        //     $description.attr("class", "future");
+        //     $description.addClass("future");
         // }
 
         // create and append a textarea row into a container
         $container.append($newRow);
     }
 
-    $(".saveBtn").on("click", function() {
-
+    $('#button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #button9').click(function(event){ 
+        if($(event.target).attr('id') === 'button1'){
+            let userInput = $.trim($("#textarea1").val());
+            $("#textarea1").text(userInput);
+            console.log("#textarea1 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button2'){
+            let userInput = $.trim($("#textarea2").val());
+            $("#textarea2").text(userInput);
+            console.log("#textarea2 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button3'){
+            let userInput = $.trim($("#textarea3").val());
+            $("#textarea3").text(userInput);
+            console.log("#textarea3 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button4'){
+            let userInput = $.trim($("#textarea4").val());
+            $("#textarea4").text(userInput);
+            console.log("#textarea4 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button5'){
+            let userInput = $.trim($("#textarea5").val());
+            $("#textarea5").text(userInput);
+            console.log("#textarea5 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button6'){
+            let userInput = $.trim($("#textarea6").val());
+            $("#textarea6").text(userInput);
+            console.log("#textarea6 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button7'){
+            let userInput = $.trim($("#textarea7").val());
+            $("#textarea7").text(userInput);
+            console.log("#textarea7 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button8'){
+            let userInput = $.trim($("#textarea8").val());
+            $("#textarea8").text(userInput);
+            console.log("#textarea8 = " + userInput);
+        } 
+        else if($(event.target).attr('id') ==='button9'){
+            let userInput = $.trim($("#textarea9").val());
+            $("#textarea9").text(userInput);
+            console.log("#textarea9 = " + userInput);
+        } 
     });
 });

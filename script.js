@@ -1,7 +1,8 @@
 // initialization
+let currentTime = moment(moment().format("hA"), "HH:mm");
 let workHours = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 let $container = $(".container");
-
+let $description = null;
 
 $(document).ready(function () {
     // displaying today's Day, Month Date, Year in the header using Moment.js
@@ -23,7 +24,7 @@ $(document).ready(function () {
         let $timeBlock = $("<div>").addClass("timeBlock").text(workHours[i-1]);
         $newRow.append($timeBlock);
 
-        let $description = $("<textarea>").addClass("description");
+        $description = $("<textarea>").addClass("description");
         // $description.addClass("present");  // Note to EL: this is only temporary
         if (localStorage.getItem("textarea"+i) != null) {
             var temp = localStorage.getItem("textarea"+i);
@@ -40,38 +41,19 @@ $(document).ready(function () {
         $container.append($newRow);
 
         // Adding color coded timeblock to indicate the past, present, and future coloring
-        // let momentTime = moment("23:30", 'HH:mm');
-        // let laterMomentTime = moment("15:00", 'HH:mm');
-
-        // if(momentTime.isBefore(laterMomentTime)){
-        //     console.log("Yes 1:30 pm is earlier");
-        // }
-
-        // if(momentTime.isAfter(laterMomentTime)) {
-        //     console.log("No, 11:30pm is later");
-        // }
+        let parsedTime = moment((workHours[i-1]), "hA");
         
-        // Format is "hA" that will be equivalent to 11AM.
-
-        let currentTime = moment().format("hA");
-        console.log("currentTime ==== " + currentTime);
-        let parsedTime = moment((workHours[i-1]), "hA").format("hA");
-        console.log("parsedTime ==== " + parsedTime);
-        
-        if (currentTime.isBefore(parsedTime)) {
+        if (currentTime.isAfter(parsedTime)) {
             $description.addClass("future");
         }
-        else {
+        else if (currentTime.isBefore(parsedTime) ){
             $description.addClass("past");
         }
+    }
         
         
-        if (currentTime) {
-            $description.addClass("present");
-        }
-        
-
-
+    if (currentTime) {
+        $description.addClass("present");
     }
 
     // The button event listeners, and localStorage texts

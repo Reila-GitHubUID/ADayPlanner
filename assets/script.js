@@ -36,6 +36,7 @@ $(document).ready(function () {
         $newRow.append($description);
 
         $newRow.append($("<button>").addClass("saveBtn").text("💾").attr("id", "button"+i));
+        $newRow.append($("<button>").addClass("deleteBtn").text("❌").attr("id", "delete"+i));
 
         // create and append a textarea row into a container
         $container.append($newRow);
@@ -104,4 +105,45 @@ $(document).ready(function () {
             localStorage.setItem("textarea9", userInput);
         } 
     });
+
+
+    $('#delete1, #delete2, #delete3, #delete4, #delete5, #delete6, #delete7, #delete8, #delete9').click(function(event){ 
+        if($(event.target).attr('id') === 'delete1'){
+            $("#textarea1").text("");
+            localStorage.setItem("textarea1", "");
+        } 
+        else if($(event.target).attr('id') ==='delete2'){
+            $("#textarea2").text("");
+            localStorage.setItem("textarea2", "");
+        } 
+        else if($(event.target).attr('id') ==='delete3'){
+            $("#textarea3").text("");
+            localStorage.setItem("textarea3", "");
+        } 
+        else if($(event.target).attr('id') ==='delete4'){
+            $("#textarea4").text("");
+            localStorage.setItem("textarea4", "");
+        } 
+        else if($(event.target).attr('id') ==='delete5'){
+            $("#textarea5").text("");
+            localStorage.setItem("textarea5", "");
+        } 
+        else if($(event.target).attr('id') ==='delete6'){
+            $("#textarea6").text("");
+            localStorage.setItem("textarea6", "");
+        } 
+        else if($(event.target).attr('id') ==='delete7'){
+            $("#textarea7").text("");
+            localStorage.setItem("textarea7", "");
+        } 
+        else if($(event.target).attr('id') ==='delete8'){
+            $("#textarea8").text("");
+            localStorage.setItem("textarea8", "");
+        } 
+        else if($(event.target).attr('id') ==='delete9'){
+            $("#textarea9").text("");
+            localStorage.setItem("textarea9", "");
+        } 
+    });
+
 });

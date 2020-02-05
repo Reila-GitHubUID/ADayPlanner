@@ -6,7 +6,7 @@ let $description = null;
 
 $(document).ready(function () {
     // displaying today's Day, Month Date, Year in the header using Moment.js
-    $("#currentDay").text(moment().format('dddd, MMMM Do, YYYY'));
+    $("#currentDay").text(moment().format('dddd, MMMM Do, YYYY' + " @ " + 'HH:mm:ss'));
 
     // contents inside the <div class="container">
     // Gathered from style.css, and will be leveraged here.

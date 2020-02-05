@@ -3,7 +3,7 @@
 ## Introduction
 This is a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery and moment.js library.
 
-![day planner demo](./05-Third-Party-APIs-homework-demo.gif)
+![day planner demo](./assets/Workday-Scheduler-Demo.gif)
 
 ## Usage
 You will notice that the current day and date are displayed at the top of the calendar.

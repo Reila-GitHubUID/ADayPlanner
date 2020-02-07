@@ -1,5 +1,5 @@
 // initialization
-let currentTime = moment(moment().format("hA"), "HH:mm");
+let currentTime = moment(moment().format("HH:mm"), "HH:mm");
 let workHours = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 let $container = $(".container");
 let $description = null;
@@ -43,8 +43,8 @@ $(document).ready(function () {
 
         // Adding color coded timeblock to indicate the past, present, and future coloring
         let parsedTime = moment((workHours[i-1]), "hA");
-        console.log("parsedTime =" + parsedTime);
-        console.log("currentTime="+currentTime);
+        console.log("parsedTime =" + parsedTime.toDate());
+        console.log("currentTime="+currentTime.toDate());
         
         if (currentTime.isAfter(parsedTime)) {
             $description.addClass("future");

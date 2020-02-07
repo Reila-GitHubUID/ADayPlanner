@@ -42,7 +42,7 @@ $(document).ready(function () {
         $container.append($newRow);
 
         // Adding color coded timeblock to indicate the past, present, and future coloring
-        let parsedTime = moment();//--------------(workHours[i-1]), "hA");
+        let parsedTime = moment((workHours[i-1]), "hA");
         console.log("parsedTime =" + parsedTime);
         console.log("currentTime="+currentTime);
         
@@ -58,9 +58,9 @@ $(document).ready(function () {
     }
         
         
-    // if (currentTime) {
-    //     $description.addClass("present");
-    // }
+    if (currentTime) {
+        $description.addClass("present");
+    }
 
     // The button event listeners, and localStorage texts
     $('#button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #button9').click(function(event){ 

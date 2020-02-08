@@ -42,10 +42,7 @@ $(document).ready(function () {
         $container.append($newRow);
 
         // Adding color coded timeblock to indicate the past, present, and future coloring
-        let parsedTime = moment((workHours[i-1]), "hA");
-        console.log("parsedTime =" + parsedTime.toDate());
-        console.log("currentTime="+currentTime.toDate());
-        
+        let parsedTime = moment((workHours[i-1]), "hA");        
         if (currentTime.isAfter(parsedTime)) {
             $description.addClass("future");
         }
